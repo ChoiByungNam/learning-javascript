@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			background-color: #999;
+		}
+		.lotto {
+			padding: 30px 0;
+			border-radius: 5px;
+			text-align: center;
+		}
+		.lotto-ball {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			color: #000;
+			background-color: #fff;
+			border: 1px solid #eee;
+			font-size: 11px;
+			font-weight: bold;
+			border-radius: 50%;
+			line-height: 20px;
+		}
+		.lotto-ball + .lotto-ball {
+			margin-left: 5px;
+		}
+		.lotto-control {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			width: 145px;
+			height: 20px;
+			margin: -10px 0 0 -72px;
+		}
+		.lotto-control button {
+			width: 70px;
+			height: 20px;
+			line-height: 16px;
+		}
+	</style>
+	<title>Day-2</title>
+</head>
+<body>
+	<div class="lotto">
+	</div>
+
+	<div class="lotto-control">
+		<button type="button" id="btnLottoStart">Start</button>
+		<button type="button" id="btnLottoUnique">Unique</button>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		// function lotto() {
+		// 	for (let j = 1; j < 20; j++) {
+		// 		let randomNum = Math.floor(Math.random() * arr.length) + 1;
+
+		// 		if (myArr.indexOf(randomNum) == -1) {
+		// 			myArr.push(randomNum);
+		// 			if (myArr.length == 6) {
+		// 				break;
+		// 			}
+		// 		}
+		// 		break; // 임시로 넣음
+		// 	}
+
+		// 	for(let k = 0; k < myArr.length; k++) {
+		// 		const maxNum = 60;
+		// 		if ($('.lotto-ball').length >= maxNum) {
+		// 			break;
+		// 		}
+		// 		$('.lotto').append('<span class="lotto-ball">' + myArr[k] + '</span>');
+		// 		if ($('.lotto-ball').length % 6 == 0) {
+		// 			$('.lotto').append('<br>');
+		// 		}
+		// 	}
+		// 	console.log(myArr);
+		// }
+
+
+		let arr, myArr, count;
+
+		function lottoSave() {
+			arr = [];
+			myArr= [];
+			count = 0;
+
+			for (let i = 1; i < 46; i++) {
+				arr.push(i);
+			}
+			console.log('save');
+		}
+		lottoSave();
+
+		function lottoDuplicates() {
+			let randomNum = Math.floor(Math.random() * arr.length) + 1;
+
+			for (let i = 1; i < 20; i++) {
+				if (myArr.indexOf(randomNum) == -1) {
+					myArr.push(randomNum);
+					if (myArr.length == 6) {
+						break;
+					}
+				}
+			}
+			console.log(myArr);
+		}
+
+		function lottoStart() {
+			if (count < 6) {
+				lottoDuplicates();
+			}
+
+			count++;
+
+			if (count === 6) {
+				lottoSave();
+			}
+		}
+
+		document.getElementById('btnLottoStart').addEventListener('click', e => {
+			lottoStart();
+		});
+	</script>
+</body>
+</html>
