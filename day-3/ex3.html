@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <title>알고리즘 연습 &gt; Level1 &gt; 나누어 떨어지는 숫자 배열</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 나의 풀이
+      function solution(arr, divisor) {
+        var answer = [];
+        answer = arr.filter((val) => val%divisor == 0);
+        if(answer.length == 0) {
+            return [-1];
+        } else {
+            return answer.sort((a, b) => a - b);
+        }
+      }
+
+      // 다른 사람 풀이
+      function solution(arr, divisor) {
+        var answer = [];
+        arr.map((o) => {
+            o % divisor === 0 && answer.push(o);
+        })
+        return answer.length ? answer.sort((a, b) => a - b) : [-1];
+      }
+    </script>
+  </body>
+</html>

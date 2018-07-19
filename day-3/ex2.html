@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <title>알고리즘 연습 &gt; Level1 &gt; 같은 숫자는 싫어</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 나의 풀이
+      const solution = arr => {
+        const result = [];
+        let current = arr[0];
+        for ( let i = 1; i < arr.length; i++ ) {
+            if ( current !== arr[i] ) {
+                result.push(current);
+                current = arr[i];
+            }
+        }
+        result.push(arr[arr.length-1]);
+        return result;
+      }
+
+      // 다른 사람 풀이
+      function solution(s) {
+        return arr.filter((val,index) => val != arr[index+1]);
+      }
+    </script>
+  </body>
+</html>
