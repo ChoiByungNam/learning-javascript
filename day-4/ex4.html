@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <title>알고리즘 연습 &gt; Level1 &gt; 두 정수 사이의 합</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // 나의 풀이
+      function adder(a, b){
+        if (a === b) {
+          return a;
+        } else {
+          for ( let i = Math.min(a, b); i <= Math.max(a, b); i++ ) {
+              return answer += i;
+          }
+        }
+      }
+
+      // 다른 사람 풀이
+      function adder(a, b){
+        var result = 0;
+        return (a+b)*(Math.abs(b-a)+1)/2;
+      }
+    </script>
+  </body>
+</html>

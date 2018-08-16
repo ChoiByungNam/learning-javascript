@@ -1,0 +1,24 @@
+{{#spritesheet}}
+.sprite-{{name}}-background-image(){
+  background-image: url({{escaped_image}});
+}
+.sprite-{{name}}-background-size(){
+  background-size: {{half width}} {{half height}};
+}
+.sprite-{{name}}-background(){
+  .sprite-{{name}}-background-image;
+  .sprite-{{name}}-background-size;
+}
+.icon-{{name}} {
+  display: inline-block;
+  .sprite-{{name}}-background;
+}
+{{/spritesheet}}
+{{sort sprites}}
+{{#sprites}}
+.{{name}} {
+  background-position: {{half offset_x}} {{half offset_y}};
+  width: {{half width}};
+  height: {{half height}};
+}
+{{/sprites}}
