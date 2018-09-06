@@ -3,13 +3,18 @@
 @import './common/mixins';
 @import './sprites/sprite-form.less';
 @import './vender/swiper.less';
+@import 'http://fonts.googleapis.com/earlyaccess/nanumgothic.css';
 
+html,
+body {
+  min-width: 1280px;
+}
 button {
   background: none;
 }
 
 .mask {
-  z-index: 3;
+  z-index: 13;
   display: none;
   position: fixed;
   top: 0;
@@ -27,7 +32,7 @@ button {
 
 .header {
   .self-clear;
-  z-index: 2;
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;
@@ -63,6 +68,7 @@ button {
   &.is-active {
     z-index: 1;
     opacity: 1;
+    border-bottom: 1px solid #eee;
   }
 }
 .header-gnb {
@@ -99,7 +105,7 @@ button {
 }
 
 .gate {
-  z-index: 3;
+  z-index: 13;
   transform: translateX(-100%);
   transition: opacity ease 0.3s, transform ease 0.3s;
   position: fixed;
@@ -143,7 +149,7 @@ button {
   text-align: center;
   overflow-y: auto;
   &.is-opened {
-    z-index: 6;
+    z-index: 14;
     opacity: 1;
   }
 }
@@ -170,7 +176,7 @@ button {
   top: 50%;
   left: 50%;
   opacity: 0;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, -200%);
   transition: opacity ease 0.7s, transform ease 0.7s;
   img {
     width: auto;
@@ -195,8 +201,8 @@ button {
   z-index: -1;
   transition: all ease 0.3s;
   position: fixed;
-  bottom: 38px;
-  right: 40px;
+  bottom: 0;
+  right: 0;
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -225,5 +231,108 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+.contents {
+  padding-top: 120px;
+}
+.banner {
+  position: relative;
+  max-width: 1600px;
+  height: 1164px;
+  margin: 0 auto;
+  color: #000;
+  font-family: "Nanum Gothic", sans-serif;
+  overflow: hidden;
+  .swiper-container {
+    position: static;
+  }
+  .swiper-pagination {
+    top: 45%;
+    right: auto;
+    left: 50%;
+    transform: translate3d(50%, -50%, 0);
+    width: 65px;
+    margin-left: 24px;
+    padding-top: 154px;
+    .swiper-pagination-bullet {
+      margin: 35px auto 0;
+      color: #000;
+      opacity: 1;
+      background: none;
+      font-size: 20px;
+      font-family: "Myriad Pro", sans-serif;
+      font-weight: bold;
+      &:focus {
+        outline: none;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      margin-top: 0;
+      font-size: 60px;
+      cursor: default;
+    }
+  }
+}
+.banner-text {
+  position: absolute;
+  font-size: 13px;
+  line-height: 23px;
+}
+.banner-image {
+  display: block;
+  img {
+    width: 100%;
+  }
+}
+.banner-main {
+  float: left;
+  width: 50%;
+  .banner-title {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    margin-left: -146px;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .banner-text {
+    top: 208px;
+    left: 50%;
+    margin-left: -65px;
+  }
+  .banner-image {
+    img {
+      max-width: 827px;
+    }
+  }
+}
+.banner-sub {
+  float: right;
+  position: relative;
+  width: ~ 'calc(50% - 193px)';
+  margin-top: 395px;
+  padding-bottom: 70px;
+  .banner-title {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .banner-text {
+    bottom: -40px;
+    left: 0;
+    text-align: left;
+  }
+  .banner-image {
+    img {
+      max-width: 562px;
+      margin-right: 48px;
+    }
   }
 }

@@ -30,6 +30,19 @@ export default class header {
     });
   }
 
+  openGnbScroll() {
+    const { rootElement, gnbElement, gnbActiveElement, settings } = this;
+    let scrollValue = $(document).scrollTop();
+
+    if ( scrollValue >= 960 || rootElement.classList.contains(settings.activeClass) ) {
+      gnbElement.style.display = 'none';
+      gnbActiveElement.classList.add(settings.activeClass);
+    } else {
+      gnbElement.style.display = 'flex';
+      gnbActiveElement.classList.remove(settings.activeClass);
+    }
+  }
+
   openGate() {
     const { gateElement, maskElement, settings } = this;
 
@@ -46,16 +59,20 @@ export default class header {
   openGnb() {
     const { rootElement, gnbElement, gnbActiveElement, settings } = this;
 
-    rootElement.classList.add(settings.activeClass);
     gnbElement.style.display = 'none';
+    rootElement.classList.add(settings.activeClass);
     gnbActiveElement.classList.add(settings.activeClass);
   }
   closeGnb() {
     const { rootElement, gnbElement, gnbActiveElement, settings } = this;
+    let scrollValue = $(document).scrollTop();
 
+    if ( scrollValue < 960 ) {
+      gnbActiveElement.classList.remove(settings.activeClass);
+    }
     rootElement.classList.remove(settings.activeClass);
     gnbElement.style.display = 'flex';
-    gnbActiveElement.classList.remove(settings.activeClass);
+    return false;
   }
 
   openSearch() {

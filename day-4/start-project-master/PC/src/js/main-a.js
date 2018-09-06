@@ -36,6 +36,9 @@ class Galleria {
           }
         },
       },
+      autoplay: {
+        delay: 3000,
+      },
       loop: true,
       pagination: {
         el: '.swiper-pagination',
@@ -48,6 +51,32 @@ class Galleria {
       spaceBetween: 234,
       slidesPerView: 3
     });
+
+    const swiperBanner = new Swiper('.swiper-container-banner', {
+      loop: true,
+      speed: 600,
+      parallax: true,
+      direction: 'vertical',
+      simulateTouch: false,
+      autoHeight: true,
+      // autoplay: {
+      //   delay: 3000,
+      // },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + 0 + (index + 1) + '</span>';
+        },
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+      effect: 'fade'
+    });
+
+    window.onload = header.openGnbScroll();
+    window.addEventListener('scroll', (e) => header.openGnbScroll());
 
     // Gate
     $('.btn-gate').on('click', () => header.openGate());
@@ -70,7 +99,8 @@ class Galleria {
       header,
       main,
       swiper,
-      swiperOneclick
+      swiperOneclick,
+      swiperBanner
     });
   }
 }
