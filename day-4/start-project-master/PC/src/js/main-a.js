@@ -53,15 +53,11 @@ class Galleria {
     });
 
     const swiperBanner = new Swiper('.swiper-container-banner', {
-      loop: true,
       speed: 600,
       parallax: true,
       direction: 'vertical',
       simulateTouch: false,
       autoHeight: true,
-      // autoplay: {
-      //   delay: 3000,
-      // },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -75,8 +71,8 @@ class Galleria {
       effect: 'fade'
     });
 
-    window.onload = header.openGnbScroll();
-    window.addEventListener('scroll', (e) => header.openGnbScroll());
+    window.onload = header.gnbPos();
+    window.addEventListener('scroll', (e) => header.gnbPos());
 
     // Gate
     $('.btn-gate').on('click', () => header.openGate());

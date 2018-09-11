@@ -30,7 +30,7 @@ export default class header {
     });
   }
 
-  openGnbScroll() {
+  gnbPos() {
     const { rootElement, gnbElement, gnbActiveElement, settings } = this;
     let scrollValue = $(document).scrollTop();
 
