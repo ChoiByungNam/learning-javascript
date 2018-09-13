@@ -47,9 +47,11 @@ class Galleria {
     });
 
     const swiperOneclick = new Swiper('.swiper-container-oneclick', {
+      initialSlide: 2,
       loop: true,
       spaceBetween: 234,
-      slidesPerView: 3
+      slidesPerView: 3,
+      centeredSlides: true
     });
 
     const swiperBanner = new Swiper('.swiper-container-banner', {

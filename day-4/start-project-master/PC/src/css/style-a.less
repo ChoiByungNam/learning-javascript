@@ -227,11 +227,24 @@ button {
 .swiper-container-oneclick {
   margin-top: 169px;
   width: 800px;
+  overflow: visible;
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .swiper-slide-active {
+    .oneclick-group {
+      display: block;
+    }
+  }
+}
+.oneclick-group {
+  display: none;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .article {
