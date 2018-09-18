@@ -56,7 +56,6 @@ class Galleria {
 
     const swiperBanner = new Swiper('.swiper-container-banner', {
       speed: 600,
-      // parallax: true,
       direction: 'vertical',
       simulateTouch: false,
       autoHeight: true,

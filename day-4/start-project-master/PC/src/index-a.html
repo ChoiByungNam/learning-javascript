@@ -18,14 +18,14 @@
     <div class="header-group header-group-basic">
       <button type="button" class="btn-gate"><img src="./img/a/header-logo.png" alt=""></button>
       <nav class="header-gnb">
-        <ul>
-          <li><span class="form gnb-menu1">명품관</span></li>
-          <li><span class="form gnb-menu2">백화점</span></li>
-          <li><span class="form gnb-menu3">카드/상품권</span></li>
-          <li><span class="form gnb-menu4">웨딩</span></li>
-          <li><span class="form gnb-menu5">고메이 494</span></li>
-          <li><span class="form gnb-menu6">문화센터</span></li>
-          <li><span class="form gnb-menu7">갤러리아 몰</span></li>
+        <ul class="gnb">
+          <li class="gnb-item"><span class="form icon-form-gnb-menu1"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu2"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu3"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu4"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu5"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu6"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu7"></span></li>
         </ul>
       </nav>
       <span class="header-util"><img src="./img/a/header-util.png" alt=""></span>
@@ -34,7 +34,17 @@
 
     <div class="header-group header-group-active">
       <button type="button" class="btn-gate"><img src="./img/a/header-logo-hover.png" alt=""></button>
-      <nav class="header-gnb"><img src="./img/a/header-gnb-hover.png" alt=""></nav>
+      <nav class="header-gnb">
+        <ul class="gnb">
+          <li class="gnb-item"><span class="form icon-form-gnb-menu1-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu2-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu3-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu4-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu5-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu6-on"></span></li>
+          <li class="gnb-item"><span class="form icon-form-gnb-menu7-on"></span></li>
+        </ul>
+      </nav>
       <span class="header-util"><img src="./img/a/header-util.png" alt=""></span>
       <button type="button" class="btn-header-search"><img src="./img/a/header-search-hover.png" alt=""></button>
     </div>
@@ -118,8 +128,8 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="banner-main">
-                  <p class="banner-title rellax" data-rellax-speed="1" data-rellax-percentage="0.6">바캉스 팝업 스토어</p>
-                  <p class="banner-text rellax" data-rellax-speed="1" data-rellax-percentage="0.6">아직 한참이나 남은여름! 시원하게 떠나는<br> 휴가의 순간을 기억하고 싶다면 인증샷은 필수! 인생샷을 만들어 줄 바캉스<br> 잇 아이템을 갤러리아 명품관 WEST 바캉스<br> 팝업 스토어에서 만나보세요.</p>
+                  <p class="banner-title">바캉스 팝업 스토어</p>
+                  <p class="banner-text">아직 한참이나 남은여름! 시원하게 떠나는<br> 휴가의 순간을 기억하고 싶다면 인증샷은 필수! 인생샷을 만들어 줄 바캉스<br> 잇 아이템을 갤러리아 명품관 WEST 바캉스<br> 팝업 스토어에서 만나보세요.</p>
                   <span class="banner-image"><img src="./img/a/banner_main1.jpg" alt=""></span>
                 </div>
 
@@ -132,8 +142,8 @@
 
               <div class="swiper-slide">
                 <div class="banner-main">
-                  <p class="banner-title rellax" data-rellax-speed="1" data-rellax-percentage="0.6">Color of Summer</p>
-                  <p class="banner-text rellax" data-rellax-speed="1" data-rellax-percentage="0.6">눈부시게 빛나는 글리터부터 다채로운 범주의 레드 립,<br> 정교한 캐츠 아이까지, 2018 S/S 시즌 메이크업 트렌드 키워드 5가지와<br> 핵심 제품들을 소개한다</p>
+                  <p class="banner-title">Color of Summer</p>
+                  <p class="banner-text">눈부시게 빛나는 글리터부터 다채로운 범주의 레드 립,<br> 정교한 캐츠 아이까지, 2018 S/S 시즌 메이크업 트렌드 키워드 5가지와<br> 핵심 제품들을 소개한다</p>
                   <span class="banner-image"><img src="./img/a/banner_main2.jpg" alt=""></span>
                 </div>
 
@@ -146,8 +156,8 @@
 
               <div class="swiper-slide">
                 <div class="banner-main">
-                  <p class="banner-title rellax" data-rellax-speed="1" data-rellax-percentage="0.6">Kiss The Stars</p>
-                  <p class="banner-text rellax" data-rellax-speed="1" data-rellax-percentage="0.6">세계적인 디자이너 에르베 반 데르 스트레텐에 의해<br> 탄생한 우아한 곡선의 큐브 디자인에, 가장 많은 사랑을 받았던<br> 5가지 스타 쉐이드의 컬러를 그대로 입혀 새로운 키스키스 컬렉션<br> 키스 더 스타를 탄생시켰다. </p>
+                  <p class="banner-title">Kiss The Stars</p>
+                  <p class="banner-text">세계적인 디자이너 에르베 반 데르 스트레텐에 의해<br> 탄생한 우아한 곡선의 큐브 디자인에, 가장 많은 사랑을 받았던<br> 5가지 스타 쉐이드의 컬러를 그대로 입혀 새로운 키스키스 컬렉션<br> 키스 더 스타를 탄생시켰다. </p>
                   <span class="banner-image"><img src="./img/a/banner_main3.jpg" alt=""></span>
                 </div>
 
@@ -175,18 +185,8 @@
   <!-- /main -->
 
   <script src="./js/main-a.js"></script>
-  <script src="./js/ScrollMagic.min.js"></script>
-  <script src="./js/debug.addIndicators.min.js"></script>
-  <script src="./js/rellax.min.js"></script>
-  <script>
-    var rellax = new Rellax('.rellax', {
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    });
-  </script>
+  <!-- <script src="./js/ScrollMagic.min.js"></script>
+  <script src="./js/debug.addIndicators.min.js"></script> -->
 </body>
 
 </html>

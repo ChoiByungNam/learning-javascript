@@ -47,6 +47,17 @@ button {
       opacity: 1;
     }
   }
+  .gnb {
+    display: flex;
+    max-width: 900px;
+  }
+  .gnb-item {
+    flex: 1;
+  }
+  .form {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 .header-group {
   display: flex;
@@ -62,11 +73,13 @@ button {
 }
 .header-group-active {
   z-index: -1;
+  display: none;
   transition: opacity ease 0.3s;
   opacity: 0;
   background-color: #fff;
   &.is-active {
     z-index: 1;
+    display: flex;
     opacity: 1;
     border-bottom: 1px solid #eee;
   }
@@ -94,7 +107,7 @@ button {
   text-align: center;
   > img {
     display: inline-block;
-    margin-left: 330px;
+    margin-left: 180px;
   }
 }
 .header-util {
@@ -293,8 +306,17 @@ button {
     }
   }
 }
+.banner-title,
+.banner-text {
+  opacity: 0;
+  transition-duration: 600ms;
+}
+.banner-title {
+  transform: translate3d(150px, 0px, 0px);
+}
 .banner-text {
   position: absolute;
+  transform: translate3d(250px, 0px, 0px);
   font-size: 13px;
   line-height: 23px;
 }
@@ -353,5 +375,13 @@ button {
       max-width: 562px;
       margin-right: 48px;
     }
+  }
+}
+.swiper-slide-active {
+  .banner-title,
+  .banner-text {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 600ms;
   }
 }
