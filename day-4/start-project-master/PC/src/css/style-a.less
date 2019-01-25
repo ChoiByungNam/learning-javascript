@@ -3,12 +3,10 @@
 @import './common/mixins';
 @import './sprites/sprite-form.less';
 @import './vender/swiper.less';
+@import './vender/animate.less';
+@import './vender/style.less';
 @import 'http://fonts.googleapis.com/earlyaccess/nanumgothic.css';
 
-html,
-body {
-  min-width: 1280px;
-}
 button {
   background: none;
 }
@@ -180,25 +178,48 @@ button {
   }
 }
 
+.main {
+  height: 100%;
+}
+
 .swiper-container-main {
+  height: 100%;
   img {
     width: 100%;
-    height: 960px;
+    height: 100%;
   }
-  .swiper-slide-text {
+  .title,
+  .description {
     position: absolute;
     top: 50%;
     left: 50%;
     opacity: 0;
-    transform: translate(-50%, -300%);
-    transition: opacity ease 1s, transform ease 1s;
-    img {
-      width: auto;
-      height: auto;
-    }
-    &.is-active {
+    text-align: center;
+    transition: opacity ease 1.5s, transform ease 1s;
+  }
+  .title {
+    transform: translate(-50%, -75%);
+    width: 100%;
+    color: #fff;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: "Myriad Pro";
+  }
+  .description {
+    transform: translate(-50%, 60%);
+    color: #fff;
+    font-size: 15px;
+    font-family: "NanumGothic";
+    line-height: 28px;
+  }
+  .is-active {
+    .title {
       opacity: 1;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -75%);
+    }
+    .description {
+      opacity: 1;
+      transform: translate(-50%, 60%);
     }
   }
 }
@@ -264,6 +285,11 @@ button {
 
 .article {
   padding-top: 120px;
+  overflow: hidden;
+}
+.section {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 .banner {
   position: relative;
@@ -324,6 +350,7 @@ button {
   display: block;
   img {
     width: 100%;
+    min-width: 300px;
   }
 }
 .banner-main {
@@ -383,5 +410,201 @@ button {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
     transition-duration: 600ms;
+  }
+}
+
+.parallax-theme {
+  position: relative;
+}
+.parallax-category {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 23px;
+}
+.parallax-title {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 70px;
+}
+.parallax-description {
+  margin-top: 29px;
+  font-size: 13px;
+  line-height: 23px;
+}
+.parallax-image {
+  position: absolute;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.parallax-theme1 {
+  height: 1378px;
+  margin-top: 200px;
+  .parallax-title,
+  .parallax-description {
+    margin-left: 100px;
+  }
+  .parallax-image1 {
+    top: 387px;
+    left: 0;
+    width: 24%;
+    img {
+      max-width: 370px;
+    }
+  }
+  .parallax-image2 {
+    top: 452px;
+    left: 155px;
+    width: 59%;
+    img {
+      max-width: 944px;
+    }
+  }
+  .parallax-image3 {
+    // top: 0;
+    // right: ~ 'calc(0% - 160px)';
+    display: block;
+    max-width: 630px;
+    img {
+      max-width: 630px;
+    }
+  }
+}
+
+.parallax-theme2 {
+  height: 645px;
+  margin-top: 200px;
+  .parallax-category,
+  .parallax-title,
+  .parallax-description {
+    margin-left: ~ 'calc(0% + 1078px)';
+  }
+  .parallax-category {
+    padding-top: 315px;
+  }
+  .parallax-image1 {
+    top: 0;
+    left: ~ 'calc(0% - 160px)';
+    width: 73%;
+    img {
+      max-width: 1160px;
+    }
+  }
+  .parallax-image2 {
+    top: -240px;
+    right: ~ 'calc(0% - 164px)';
+    width: 25%;
+    img {
+      max-width: 396px;
+    }
+  }
+}
+
+.parallax-theme3 {
+  height: 975px;
+  margin-top: 185px;
+  .parallax-category {
+    margin-top: 210px;
+  }
+  .parallax-image1 {
+    z-index: 1;
+    bottom: 0;
+    left: 530px;
+    width: 23%;
+    img {
+      max-width: 357px;
+    }
+  }
+  .parallax-image2 {
+    top: 0;
+    right: 0;
+    width: 53%;
+    img {
+      max-width: 840px;
+    }
+  }
+}
+
+.parallax-theme4 {
+  height: 1185px;
+  margin-top: 270px;
+  .parallax-category,
+  .parallax-title {
+    z-index: 2;
+    position: relative;
+    top: -85px;
+    margin: 0 0 0 760px;
+  }
+  .parallax-image1 {
+    z-index: 1;
+    top: -140px;
+    left: -32px;
+    width: 36%;
+    img {
+      max-width: 572px;
+    }
+  }
+  .parallax-image2 {
+    top: 0;
+    right: -40px;
+    width: 60%;
+    img {
+      max-width: 954px;
+    }
+  }
+}
+
+.parallax-theme5 {
+  height: 1755px;
+  margin-top: 278px;
+  .parallax-image1 {
+    z-index: 1;
+    top: -480px;
+    left: -138px;
+    width: 66%;
+    img {
+      max-width: 1045px;
+    }
+  }
+  .parallax-image2 {
+    top: 0;
+    right: -152px;
+    width: 51%;
+    img {
+      max-width: 801px;
+    }
+  }
+  .parallax-image3 {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    img {
+      max-width: 1592px;
+    }
+  }
+}
+
+.parallax-theme6 {
+  height: 1755px;
+  margin-top: 278px;
+  .parallax-image1 {
+    z-index: 1;
+    top: -480px;
+    left: -138px;
+    width: 66%;
+    img {
+      max-width: 1045px;
+    }
+  }
+  .parallax-image2 {
+    top: 0;
+    right: -152px;
+    width: 51%;
+    img {
+      max-width: 801px;
+    }
   }
 }

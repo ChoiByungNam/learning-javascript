@@ -34,7 +34,7 @@ export default class header {
     const { rootElement, gnbElement, gnbActiveElement, settings } = this;
     let scrollValue = $(document).scrollTop();
 
-    if ( scrollValue >= 960 || rootElement.classList.contains(settings.activeClass) ) {
+    if ( scrollValue >= 869 || rootElement.classList.contains(settings.activeClass) ) {
       gnbElement.style.display = 'none';
       gnbActiveElement.classList.add(settings.activeClass);
     } else {

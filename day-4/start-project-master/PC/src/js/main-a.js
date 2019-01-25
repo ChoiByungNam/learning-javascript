@@ -27,23 +27,41 @@ class Galleria {
           $('.swiper-slide-text1').addClass('is-active');
         },
         slideChange: function() {
-          const slideTextSelector = '.swiper-slide-text';
+          let slideTextSelector = '.swiper-slide-text';
           let slideIndex = this.realIndex + 1;
 
           if ($(slideTextSelector + slideIndex)) {
             $(slideTextSelector).removeClass('is-active');
             $(slideTextSelector + slideIndex).addClass('is-active');
           }
+
+          $(slideTextSelector + slideIndex).find('.title').textillate({
+            in: {
+              effect: 'fadeIn',
+              delayScale: 2,
+              delay: 40,
+              loop: false
+            }
+          });
+
+          $(slideTextSelector + slideIndex).find('.description > p').textillate({
+            in: {
+              effect: 'fadeIn',
+              delayScale: 1.5,
+              delay: 20,
+              loop: false
+            }
+          });
         },
       },
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       loop: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true
-      }
+      },
     });
 
     const swiperOneclick = new Swiper('.swiper-container-oneclick', {
@@ -62,9 +80,9 @@ class Galleria {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        renderBullet: function (index, className) {
+        renderBullet: function(index, className) {
           return '<span class="' + className + '">' + 0 + (index + 1) + '</span>';
-        },
+        }
       },
       fadeEffect: {
         crossFade: true

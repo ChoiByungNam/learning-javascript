@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <child message="안녕하세요!"></child>
+
+  <script>
+    Vue.component('child', {
+      props: ['message'],
+      template: '<span>{{ message }}</span>'
+    })
+  </script>
+</body>
+</html>
