@@ -2,50 +2,45 @@
 @import './common/variables';
 @import './common/mixins';
 @import './sprites/sprite-form.less';
-@import './vender/swiper';
 
-.swiper-container {
-  width: 100%;
+.fullpage {
   height: 100%;
 }
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  &.active {
-    background: red;
+.section {
+  height: 100%;
+  &:nth-child(1) {
+    background-color: red;
+  }
+  &:nth-child(2) {
+    background-color: orange;
+  }
+  &:nth-child(3) {
+    background-color: yellow;
+  }
+  &:nth-child(4) {
+    background-color: green;
+  }
+  &:nth-child(5) {
+    background-color: blue;
   }
 }
 
-.icon {
-  display: inline-block;
-  .hidden-text(inline-block);
-  vertical-align: top;
-}
-
-.grid {
-  .self-clear;
-}
-
-.grid-item {
-  float: left;
-  width: 300px;
-  height: 350px;
-  border: 2px solid hsla(0, 0%, 0%, 0.5);
-  box-sizing: border-box;
-}
-
-.grid-item--width2 {
-  width: 600px;
-}
-
-.grid-item--height2 {
-  height: 700px;
+.nav {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  > button {
+    display: block;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #e9e9e9;
+    border: 0 none;
+    font-size: 0;
+    line-height: 0;
+    ~ button {
+      margin-top: 5px;
+    }
+  }
 }

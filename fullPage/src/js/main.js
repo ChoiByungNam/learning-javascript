@@ -6,8 +6,7 @@ import 'babel-polyfill';
 // 3rd-party dependencies
 import $ from 'jquery';
 import 'jquery-ui/ui/effect';
-import Swiper from 'swiper';
-import Header from './components/header';
+import WheelMotion from './components/wheelMotion';
 
 window.$ = $;
 window.jQuery = $;
@@ -18,33 +17,23 @@ window.jQuery = $;
 
 const defaults = {};
 
-class ProjectName {
+class FullPage {
   constructor(options) {
     const settings = Object.assign({}, defaults, options);
-    const header = new Header();
+    const wheelMotion = new WheelMotion();
 
-    const swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination'
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
-    });
-
-    $('.header-toggle').on('click', () => header.toggle());
+    window.onload = wheelMotion.move();
+    window.onload = wheelMotion.pagination();
 
     Object.assign(this, {
       settings,
-      header,
-      swiper
+      wheelMotion
     });
   }
 }
 
 $(() => {
-  const App = new ProjectName();
+  const App = new FullPage();
   window.App = App;
   console.log(App);
 });
